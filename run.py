@@ -1,7 +1,9 @@
 import os
 import time
+import requests
 from playwright.sync_api import Page
 import yaml
+
 
 if not os.path.isdir('./ScreenShots'):
     os.makedirs('./ScreenShots')
@@ -32,6 +34,14 @@ def login(page: Page):
 
 
 def test_create_user(page: Page):
+    count: int = 0
+    while count < 500:
+        try:
+            requests.get(f'{config["url"]}')
+            break
+        except requests.exceptions.ConnectionError:
+            time.sleep(3)
+            count += 1
     page.goto(f'{config["url"]}')
     page.wait_for_load_state('networkidle')
     page.click('//*[@id="app"]/main/div/div[1]/div/p/span[1]')
