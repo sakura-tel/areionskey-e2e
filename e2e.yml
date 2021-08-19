@@ -1,8 +1,8 @@
-url: 'http://localhost:61811'
-port: 61811
+url: 'http://localhost:8088'
+port: 8088
 db:
   host: localhost
-  port: 54311
+  port: 5432
   db: test-misskey
   user: postgres
   pass: ''
