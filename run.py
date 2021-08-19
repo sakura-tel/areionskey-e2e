@@ -25,7 +25,7 @@ def test_create_user(page: Page):
     page.click('//*[@id="app"]/main/div/div[1]/div/p/span[1]')
     # アカウント登録
     page.query_selector(
-        '#app > div.modal.v--modal-overlay.scrollable > div > div.v--modal-box.v--modal > form > div:nth-child(1) > div.input > input[type=text]').fill('alice3')
+        '#app > div.modal.v--modal-overlay.scrollable > div > div.v--modal-box.v--modal > form > div:nth-child(1) > div.input > input[type=text]').fill('alice')
     page.query_selector(
         '#app > div.modal.v--modal-overlay.scrollable > div > div.v--modal-box.v--modal > form > div:nth-child(2) > div.input > input[type=password]').fill('alice1234')
     page.query_selector(
