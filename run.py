@@ -1,6 +1,10 @@
+import os
 import time
 from playwright.sync_api import Page
 import yaml
+
+if not os.path.isdir('./ScreenShots'):
+    os.makedirs('./ScreenShots')
 
 with open('../.config/test.yml', 'r', encoding='utf-8') as f:
     config = yaml.safe_load(f)
@@ -32,12 +36,12 @@ def test_create_user(page: Page):
         '#app > div.modal.v--modal-overlay.scrollable > div > div.v--modal-box.v--modal > form > div:nth-child(3) > div.input > input[type=password]').fill('alice1234')
     page.query_selector('#app > div.modal.v--modal-overlay.scrollable > div > div.v--modal-box.v--modal > form > button').click()
     time.sleep(3)
-    page.screenshot(path="register_user.png")
+    page.screenshot(path="./ScreenShots/register_user.png")
 
 
 def test_login(page: Page):
     page = login(page)
-    page.screenshot(path="login.png")
+    page.screenshot(path="./ScreenShots/login.png")
 
 
 def test_note(page: Page):
@@ -48,4 +52,4 @@ def test_note(page: Page):
         'body > div.mk-window.mk-post-form-window > div.main > div > div > div > div > div > div.content > div > textarea').fill('Hello Ayuskey')
     page.click('body > div.mk-window.mk-post-form-window > div.main > div > div > div > div > div > button.dmtdnykelhudezerjlfpbhgovrgnqqgr.submit.primary.round')
     time.sleep(3)
-    page.screenshot(path="note.png")
+    page.screenshot(path="./ScreenShots/note.png")
