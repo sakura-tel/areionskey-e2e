@@ -4,7 +4,6 @@ import requests
 from playwright.sync_api import Page
 import yaml
 
-
 if not os.path.isdir('./ScreenShots'):
     os.makedirs('./ScreenShots')
 
@@ -15,9 +14,9 @@ def open_file(path: str):
 
 
 try:
-    config = open_file('../.config/test.yml')
-except FileNotFoundError:
     config = open_file('../.config/default.yml')
+except FileNotFoundError:
+    config = open_file('../.config/test.yml')
 
 
 def login(page: Page):
