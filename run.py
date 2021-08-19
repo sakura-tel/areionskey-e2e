@@ -6,8 +6,16 @@ import yaml
 if not os.path.isdir('./ScreenShots'):
     os.makedirs('./ScreenShots')
 
-with open('../.config/test.yml', 'r', encoding='utf-8') as f:
-    config = yaml.safe_load(f)
+
+def open_file(path: str):
+    with open(path, 'r', encoding='utf-8') as f:
+        return yaml.safe_load(f)
+
+
+try:
+    config = open_file('../.config/test.yml')
+except FileNotFoundError:
+    config = open_file('../.config/default.yml')
 
 
 def login(page: Page):
