@@ -12,6 +12,7 @@ It is assumed that you are using Ayuskey.
 
 ```bash
 pip install -r requirements.txt
+python -m playwright install
 pytest run.py
 ```
 
