@@ -2,7 +2,7 @@ import time
 from playwright.sync_api import Page
 import yaml
 
-with open('../.config/test.yml', 'r') as f:
+with open('../.config/test.yml', 'r', encoding='utf-8') as f:
     config = yaml.safe_load(f)
 
 
