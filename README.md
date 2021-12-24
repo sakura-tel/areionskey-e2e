@@ -1,5 +1,5 @@
-# Ayuskey E2E Test
-[![CodeFactor](https://www.codefactor.io/repository/github/teamblackcrystal/ayuskey-e2e/badge)](https://www.codefactor.io/repository/github/teamblackcrystal/ayuskey-e2e)
+# Milkey E2E Test
+[![CodeFactor](https://www.codefactor.io/repository/github/sakura-tel/milkey-e2e/badge)](https://www.codefactor.io/repository/github/sakura-tel/milkey-e2e)
 
 A repository for E2E testing with Ayuskey
 
