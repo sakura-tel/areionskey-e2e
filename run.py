@@ -5,8 +5,7 @@ import requests
 from playwright.sync_api import Page
 import yaml
 
-
-class LoginError:
+class LoginError(Exception):
     """ログイン時にエラーが発生しました"""
 
 if not os.path.isdir('./ScreenShots'):
